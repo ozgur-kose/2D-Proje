@@ -725,14 +725,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 378328017479692106, guid: 5301da117d41d424e9358e675778132c, type: 3}
-      propertyPath: attack1Point
-      value: 
-      objectReference: {fileID: 1953439092}
-    - target: {fileID: 378328017479692106, guid: 5301da117d41d424e9358e675778132c, type: 3}
-      propertyPath: attack2Point
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4241796005408930516, guid: 5301da117d41d424e9358e675778132c, type: 3}
       propertyPath: m_Name
       value: Fire_Knight
@@ -776,10 +768,6 @@ PrefabInstance:
     - target: {fileID: 4287882799838736108, guid: 5301da117d41d424e9358e675778132c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619906985857815178, guid: 5301da117d41d424e9358e675778132c, type: 3}
-      propertyPath: m_Name
-      value: Attack1Point
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3333,11 +3321,6 @@ Transform:
   - {fileID: 563851770}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1953439092 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4974787951137838748, guid: 5301da117d41d424e9358e675778132c, type: 3}
-  m_PrefabInstance: {fileID: 692916135}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2059220489
 GameObject:
   m_ObjectHideFlags: 0

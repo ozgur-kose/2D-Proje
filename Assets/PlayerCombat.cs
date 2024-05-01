@@ -7,46 +7,58 @@ public class PlayerCombat : MonoBehaviour
 
     public Animator animator;
     
+
     public LayerMask enemyLayers;
+
 
   
     //Attack 1 için
-    public float attack1Rate = 2f;
-    private float nextAttackTime1 = 0f;
-    public Transform attack1Point;
-    public float attack1Range = 0.5f;
+    public float attackRate = 2f;
+    private float nextAttackTime = 0f;
+    public Transform attackPoint;
+    public float attackRange = 0.9f;
+
+   
 
     void Update()
     {
-        if (Time.time >= nextAttackTime1)
+        //Attack cooldown için
+        if (Time.time >= nextAttackTime)
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Attack1();
-                nextAttackTime1 = Time.time + 1f / attack1Rate;
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
             }
         }
     }
-    void Attack1()
+    void Attack()
     {
-        animator.SetTrigger("Attack1");
+            animator.SetTrigger("Attack1");
+            
+    }
+  
 
+    void AttackOnAnimation()
+    {
+        
         //Belirlenen bölgede belirlenen çapta daire oluþturur ve dairenin çarptýðý bütün nesneleri toplar
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attack1Point.position,attack1Range,enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         //Vurulan düþmanlarý tutan listedeki herkese hasar uygulama
         foreach (var enemy in hitEnemies)
         {
             //Vurulan hasar buraya girilecek
         }
-
     }
+
+
 
    
 
     void OnDrawGizmosSelected()
     {
-        if (attack1Point== null) return;
-        Gizmos.DrawSphere(attack1Point.position, attack1Range);   
+        if (attackPoint== null) return;
+        Gizmos.DrawSphere(attackPoint.position, attackRange);   
     }
 }
